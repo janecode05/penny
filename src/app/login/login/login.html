@@ -1,0 +1,98 @@
+<main class="login-page">
+  <section class="brand-panel" aria-label="About Penny">
+    <a class="brand" href="/login" aria-label="Penny home">
+      <span class="brand-mark" aria-hidden="true">••</span>
+      <span>Penny</span>
+    </a>
+
+    <p class="brand-kicker">A SOFTER WAY TO MANAGE MONEY</p>
+    <h1>Make every penny feel purposeful.</h1>
+    <p class="brand-description">
+      A sweet little space to track your spending, grow your savings, and feel
+      good about your finances.
+    </p>
+
+    <div class="savings-highlight">
+      <span class="savings-icon" aria-hidden="true">$</span>
+      <div class="savings-copy">
+        <span>This month’s savings</span>
+        <strong>$1,240.00</strong>
+      </div>
+      <span class="savings-change">+18%</span>
+    </div>
+
+    <p class="brand-footer">Thoughtful money habits, one day at a time.</p>
+  </section>
+
+  <section class="form-panel" aria-labelledby="login-heading">
+    <nav class="auth-switch" aria-label="Account options">
+      <span>New to Penny?</span>
+      <a routerLink="/create-login">Create account <span aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="login-content">
+      <p class="form-kicker">WELCOME BACK</p>
+      <h2 id="login-heading">Sign in to your wallet</h2>
+      <p class="form-description">Your happy little money corner is waiting for you.</p>
+
+      <form class="loginform" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="field-group">
+          <label for="username">Username</label>
+          <div class="input-shell">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="3.5"></circle>
+              <path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path>
+            </svg>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              autocomplete="username"
+              required
+              [(ngModel)]="username"
+            />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+          <div class="input-shell">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              [(ngModel)]="password"
+            />
+            <svg class="password-eye" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M2.5 12s3.2-5 9.5-5 9.5 5 9.5 5-3.2 5-9.5 5-9.5-5-9.5-5Z"></path>
+              <circle cx="12" cy="12" r="2.2"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <label class="remember-option">
+          <input type="checkbox" name="rememberMe" [ngModel]="false" />
+          <span>Remember me</span>
+        </label>
+
+        <button class="submit-button" type="submit">
+          <span>Open my wallet</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <p class="demo-note">Demo mode — any username and password work</p>
+    </div>
+  </section>
+</main>

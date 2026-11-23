@@ -1,0 +1,124 @@
+<main class="create-page">
+  <section class="brand-panel" aria-label="About Penny">
+    <a class="brand" routerLink="/login" aria-label="Penny home">
+      <span class="brand-mark" aria-hidden="true">••</span>
+      <span>Penny</span>
+    </a>
+
+    <p class="brand-kicker">A SOFTER WAY TO MANAGE MONEY</p>
+    <h1>Make every penny feel purposeful.</h1>
+    <p class="brand-description">
+      A sweet little space to track your spending, grow your savings, and feel
+      good about your finances.
+    </p>
+
+    <div class="savings-highlight">
+      <span class="savings-icon" aria-hidden="true">$</span>
+      <div class="savings-copy">
+        <span>This month’s savings</span>
+        <strong>$1,240.00</strong>
+      </div>
+      <span class="savings-change">+18%</span>
+    </div>
+
+    <p class="brand-footer">Thoughtful money habits, one day at a time.</p>
+  </section>
+
+  <section class="form-panel" aria-labelledby="create-heading">
+    <nav class="auth-switch" aria-label="Account options">
+      <span>Already have an account?</span>
+      <a routerLink="/login">Sign in <span aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="create-content">
+      <p class="form-kicker">START YOUR MONEY STORY</p>
+      <h2 id="create-heading">Create your account</h2>
+      <p class="form-description">
+        Pick a username and a secure password to make this wallet yours.
+      </p>
+
+      <form class="create-form" #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+        <div class="field-group">
+          <label for="username">Username</label>
+          <div class="input-shell">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="3.5"></circle>
+              <path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path>
+            </svg>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              autocomplete="username"
+              required
+              [(ngModel)]="username"
+            />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="password">Password</label>
+          <div class="input-shell">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="new-password"
+              required
+              minlength="2"
+              [(ngModel)]="password"
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'"
+              (click)="showPassword = !showPassword"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M2.5 12s3.2-5 9.5-5 9.5 5 9.5 5-3.2 5-9.5 5-9.5-5-9.5-5Z"></path>
+                <circle cx="12" cy="12" r="2.2"></circle>
+              </svg>
+            </button>
+          </div>
+          <small class="field-hint">At least 8 characters</small>
+        </div>
+
+        <div class="field-group">
+          <label for="confirm-password">Confirm password</label>
+          <div class="input-shell">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m5 12 4 4L19 6"></path>
+            </svg>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              placeholder="Type your password again"
+              autocomplete="new-password"
+              required
+              [(ngModel)]="confirmPassword"
+            />
+          </div>
+          @if (submitted && password !== confirmPassword) {
+            <small class="form-error" role="alert">Passwords do not match.</small>
+          }
+        </div>
+
+        <p class="privacy-note">
+          By creating an account, you agree to keep your login details safe.
+        </p>
+
+        <button class="submit-button" type="submit">
+          <span>Create my account</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>

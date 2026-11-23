@@ -1,0 +1,171 @@
+<div class="dashboard">
+  <aside class="sidebar">
+    <a class="brand" href="/dashboard">🍓 Penny</a>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="nav-link active" href="/dashboard">Overview</a>
+      <a class="nav-link" href="#">Transactions</a>
+      <a class="nav-link" href="#">Savings</a>
+      <a class="nav-link" href="#">Budget</a>
+    </nav>
+
+    <section class="goal-card" aria-label="Savings goal">
+      <h2>Dream fund</h2>
+      <p>You're 68% there!</p>
+      <div class="goal-progress">
+        <span></span>
+      </div>
+    </section>
+
+    <a class="logout-link" href="/login">Log out</a>
+  </aside>
+
+  <main class="main-content">
+    <header class="welcome">
+  <div>
+    <p class="date">WEDNESDAY, MAY 28</p>
+    <h1>Good morning, {{ username }}</h1>
+    <p>Here’s how your money is looking today.</p>
+  </div>
+
+  <div class="header-actions">
+    <button type="button">▦ &nbsp; Calculator</button>
+    <button type="button" aria-label="Notifications">♧</button>
+    <span class="avatar">12</span>
+  </div>
+</header>
+
+    <section class="summary-grid" aria-label="Account summary">
+      <article class="summary-card balance">
+        <p>Total balance</p>
+        <h2>$8,420.50</h2>
+        <p>↑ 4.8% from last month</p>
+      </article>
+
+      <article class="summary-card savings">
+        <p>Savings</p>
+        <h2>$3,280.00</h2>
+        <p>68% of your $4,800 goal</p>
+      </article>
+
+      <article class="summary-card money-out">
+        <p>Money out</p>
+        <h2>$1,347.20</h2>
+        <p>↓ 8.2% less than last month</p>
+      </article>
+
+      <article class="summary-card money-in">
+        <p>Money in</p>
+        <h2>$3,920.00</h2>
+        <p>↑ 12.4% from last month</p>
+      </article>
+    </section>
+
+    <section class="panel spending-panel" aria-label="Monthly spending overview">
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow">MONTHLY OVERVIEW</p>
+      <h2>Spending snapshot</h2>
+    </div>
+
+    <select aria-label="Select month">
+      <option>May</option>
+    </select>
+  </div>
+
+  <div class="spending-content">
+    <div class="spending-chart" aria-label="Total spent: $1,347">
+      <div class="chart-center">
+        <span>Spent</span>
+        <strong>$1,347</strong>
+      </div>
+    </div>
+
+    <div class="spending-legend">
+      <div><span class="legend-dot housing"></span><strong>Housing</strong><small>$620 · 46%</small></div>
+      <div><span class="legend-dot food"></span><strong>Food</strong><small>$310 · 23%</small></div>
+      <div><span class="legend-dot shopping"></span><strong>Shopping</strong><small>$242 · 18%</small></div>
+      <div><span class="legend-dot other"></span><strong>Other</strong><small>$175 · 13%</small></div>
+    </div>
+  </div>
+</section>
+<section class="panel savings-goal-panel" aria-label="Savings goal">
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow">SAVINGS GOAL</p>
+      <h2>Paris getaway</h2>
+    </div>
+    <button class="more-button" type="button" aria-label="More savings goal options">···</button>
+  </div>
+
+  <div class="savings-goal-details">
+    <div class="goal-amount">
+      <strong>$3,280</strong>
+      <span>of $4,800</span>
+    </div>
+    <span class="goal-percent">68%</span>
+  </div>
+
+  <div class="goal-progress large">
+    <span></span>
+  </div>
+
+  <p class="goal-message">Just $1,520 to go — you’ve got this!</p>
+</section>
+
+<section class="panel transactions-panel" aria-label="Recent transactions">
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow">KEEP AN EYE ON IT</p>
+      <h2>Recent transactions</h2>
+    </div>
+    <a class="view-all" href="#">View all&nbsp; →</a>
+  </div>
+
+  <div class="transactions-table-wrapper">
+    <table class="transactions-table">
+      <thead>
+        <tr>
+          <th>Transaction</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="transaction-icon purple">FP</span>Freelance payment</td>
+          <td>Income</td>
+          <td>May 28, 2025</td>
+          <td><span class="status">Completed</span></td>
+        </tr>
+        <tr>
+          <td><span class="transaction-icon peach">BC</span>Blossom Café</td>
+          <td>Food &amp; drinks</td>
+          <td>May 27, 2025</td>
+          <td><span class="status">Completed</span></td>
+        </tr>
+        <tr>
+          <td><span class="transaction-icon pink">MS</span>Monthly savings</td>
+          <td>Transfer</td>
+          <td>May 25, 2025</td>
+          <td><span class="status">Completed</span></td>
+        </tr>
+        <tr>
+          <td><span class="transaction-icon green">LM</span>Luna Market</td>
+          <td>Groceries</td>
+          <td>May 23, 2025</td>
+          <td><span class="status">Completed</span></td>
+        </tr>
+        <tr>
+          <td><span class="transaction-icon blue">CS</span>Cloud Studio</td>
+          <td>Subscription</td>
+          <td>May 21, 2025</td>
+          <td><span class="status">Completed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+  </main>
+</div>
